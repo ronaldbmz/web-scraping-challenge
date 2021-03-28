@@ -72,8 +72,39 @@ def scrape():
   
     #strip unwanted newlines to clean up the table
     #html_table.replace('\n', '')
-       
+     
+    '''Mars Hemispheres'''
+    hemisphere_image_urls = []
     
+    for i in range(4):
+        
+        temp_dict = {}
+        
+        #navigating to the main website
+        url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+        browser.visit(url)
+        xpath = '//h3'
+        results = browser.find_by_xpath(xpath)
+        img = results[i]
+        
+        #clicking on each image
+        img.click()
+        
+        #getting image link and title
+        html = browser.html
+        soup = BeautifulSoup(html, 'html.parser')
+        img_url = soup.find("img", class_="wide-image")["src"]
+        img_url = 'https://astrogeology.usgs.gov'+img_url
+        title = soup.find("h2", class_="title").text
+        
+        #storing the result in dict
+        temp_dict['title'] = title
+        temp_dict['img_url'] = img_url
+        
+        #appending dict in list
+        hemisphere_image_urls.append(temp_dict) 
+    
+    mars_data['mars_hemis'] = hemisphere_image_urls
     
     browser.quit()
     
