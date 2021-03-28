@@ -110,7 +110,6 @@ def scrape():
     
     return (mars_data,df)
 
-print(scrape())
 
 
 
