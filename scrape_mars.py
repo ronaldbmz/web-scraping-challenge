@@ -44,11 +44,98 @@ def scrape():
     
     mars_data['news_title'] = news_title
     mars_data['news_para'] = news_p
+    
+    
+    '''JPL Mars Space Images - Featured Image'''
+    # Visit the following URL
+    url = "https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html"
+    browser.visit(url)
+    
+    html = browser.html
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    featured_image_url = soup.find("img", class_="headerimage fade-in")["src"]
+    featured_image_url = url.replace("index.html","") + featured_image_url
+    mars_data['featured_image'] = featured_image_url
 
+    '''Mars Facts'''
+    url = 'https://space-facts.com/mars/'
+    tables = pd.read_html(url)
+    
+    #Slicing off other dataframes
+    df = tables[0]
+    df = df.rename(columns={0: "Description", 1: "Mars"})
+    df = df.set_index(['Description'])
+    
+    #Pandas dataframe to html
+    #html_table = df.to_html() 
+  
+    #strip unwanted newlines to clean up the table
+    #html_table.replace('\n', '')
+       
     
     
     browser.quit()
     
-    return (mars_data)
+    return (mars_data,df)
 
 print(scrape())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
