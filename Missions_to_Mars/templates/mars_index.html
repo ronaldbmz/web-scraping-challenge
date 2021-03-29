@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mars_index.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <script type="text/javascript">
+function changedata(img)
+{
+ <!--document.getElementById("first").style.display ='block';-->
+ var elements = document.getElementsByClassName(img);
+	alert(elements);
+}
+</script>
+
+<meta charset="UTF-8">
+<title>Latitude</title> 
+  
+</head>
+<body>
+
+<div class="container">
+<div class="row">
+<div class="col-lg-12">
+
+ <!-- <div class="rightColumn">-->
+<div clas="container">
+<div class="jumbotron text-center">
+  <h1 class="header-text1"> <strong>Mission to Mars</strong> </h1>
+  <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+</div>
+
+ <div class="card">
+ 
+  <div class="text-header">
+  <h3 class="header-text"> <strong>Latest Mars News</strong></h3>
+  <h4 class="header-text"> <strong>{{ mars.news_title }}</strong></h4>
+  <p class="header-text"> {{ mars.news_para }}</p>
+  </div>
+   <hr class="header-line">
+
+ <!--</div>-->
+</div>
+</div>
+</body>
+</html>
