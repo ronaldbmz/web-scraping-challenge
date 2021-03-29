@@ -25,12 +25,14 @@ mars.update(
     upsert=True
 )
 
+#routing to home page
 @app.route('/')
 def index():
     mars = mongo.db.mars.find_one()
     return render_template('mars_index.html', mars=mars, tables=df.to_html(classes='table'))
 
 
+#routing to scrape function
 @app.route('/scrape')
 def scrape():
     mars = mongo.db.mars
