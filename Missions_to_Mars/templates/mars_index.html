@@ -47,6 +47,14 @@ function changedata(img)
      <h3 class="sub-header-text1"> <strong>Featured Mars Image</strong></h3>
      <img  class="listImage" src={{ mars.featured_image }} width="250px" height="500px"></img>
       </div>
+      <div class="col-lg-5 listImageColumn">
+        <h3 class="sub-header-text1"> <strong>Mars Facts</strong></h3>
+        
+         <div class="table-responsive">
+               {{ tables|safe }}
+          </div>
+       </div>
+
 
  <!--</div>-->
 </div>
