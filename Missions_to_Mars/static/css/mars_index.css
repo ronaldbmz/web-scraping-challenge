@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+      background-color: #ededed !important;
+}
+
+/* Header/Blog Title */
+.jumbotron{
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+
+.jumbotron {
+height: 200;
+}
+
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 70%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 30%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.showImage {
+  background-color: #aaa;
+  width: 100%;
+  padding: 2px;
+}
+
+
+.listImage {
+  background-color: #aaa;
+  min-width: 100%;
+  /* padding: 2px;*/
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   flex-direction: row;
+       display: block;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.mainImageText{
+	margin: 20px 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 17px;
+}
+
+.row{
+	width:100%;
+	min-height:100%
+}
+.listImageColumn{
+	margin-top: 10px;
+}
+.header-line{
+	color:black;
+}
+.text-header{
+	    padding: 2px;
+}
+.header-text{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 40px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub-header-text1{
+	font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.sub-header-text{
+	font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+table>thead>tr>th{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.table-header{background-color: #ffffff;}
+
+table>tbody>tr>td{
+	font-size: 12px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+tr:nth-child(odd) {background-color: #f2f2f2;}
